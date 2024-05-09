@@ -5,7 +5,8 @@ module full_adder #(parameter N = 4) (
     output reg cout
 );
 
-logic [3:0] c;
+reg [3:0] c;
+assign c[0] = cin;
 
 unit_adder adder_Z(
             a[0],
