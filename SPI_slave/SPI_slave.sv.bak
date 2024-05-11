@@ -1,0 +1,10 @@
+module SPI_slave(input logic clk, SS, input logic [9:0] MOSI,
+						output logic [9:0] MISO, output logic CS);
+	
+	
+	always_ff @ (posedge clk) begin
+		CS = SS ? 1'b1 : 1'b0;
+		
+	end
+
+end
