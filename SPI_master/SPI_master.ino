@@ -1,31 +1,42 @@
 #include <SPI.h>
 
 long time_ini = millis();
-bool data [10] = {0,0,0,0,0,0,0,0,0,0};
-int pos_counter = 0;
+bool bit;
+bool dataReceived = true; 
+bool data [10] = {0,0,0,0,0,0,0,0,0,0}; 
 
 void setup() {
   Serial.begin(9600);
-  digitalWrite(SS, HIGH);
-  while(??? 10) yes 
-
-
-
+  digitalWrite(SS, HIGH);/*
+  for(int i = 0; i <= 9; i++){
+    pinMode(i, INPUT);
+  }*/
   SPI.begin();
   SPI.setClockDivider(SPI_CLOCK_DIV16);
 }
-
 void loop() {
- if(millis() - time_ini < 1000){
-  data[pos_counter] = 1;
- }else{
-  data[pos_counter] = 0;
-  if(pos_counter >= 9){
-    pos_counter = 0;
-  }else{
-    pos_counter+=1;
-  }
-  time_ini = millis();
+ for (int i = 0; i <= 9; i++){
+    if(i < 5){
+      bit = 1;
+    }else{
+      bit = 0;
+    }
+    Serial.print(bit);
+    SPI.transfer(bit);
+    data[i] = digitalRead(12);
+    if (data[i] == bit) {
+      dataReceived = false;
+    }
  }
- fpga = SPI.transfer()
+ Serial.print(" "); 
+  for(int i = 0; i <= 9; i++){
+    Serial.print(data[i]);
+  }
+  Serial.print(" ");
+ if (dataReceived){
+  Serial.println("Data received"); 
+ } else {
+  Serial.println(" Failed sending data"); 
+ }
+ dataReceived = true;  
 }

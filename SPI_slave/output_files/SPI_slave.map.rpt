@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SPI_slave
-Sat May 11 19:10:36 2024
+Sat May 11 21:54:59 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 11 19:10:36 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 11 21:54:59 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; SPI_slave                                   ;
 ; Top-level Entity Name           ; SPI_slave                                   ;
@@ -182,12 +182,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Estimate of Logic utilization (ALMs needed) ; 1         ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 0         ;
+; Combinational ALUT usage for logic          ; 1         ;
 ;     -- 7 input functions                    ; 0         ;
 ;     -- 6 input functions                    ; 0         ;
 ;     -- 5 input functions                    ; 0         ;
 ;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 0         ;
+;     -- <=3 input functions                  ; 1         ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 1         ;
 ;                                             ;           ;
@@ -197,8 +197,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; MISO~reg0 ;
 ; Maximum fan-out                             ; 1         ;
-; Total fan-out                               ; 7         ;
-; Average fan-out                             ; 0.78      ;
+; Total fan-out                               ; 8         ;
+; Average fan-out                             ; 0.80      ;
 +---------------------------------------------+-----------+
 
 
@@ -207,7 +207,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |SPI_slave                 ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 4    ; 0            ; |SPI_slave          ; SPI_slave   ; work         ;
+; |SPI_slave                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 4    ; 0            ; |SPI_slave          ; SPI_slave   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -229,16 +229,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; arriav_ff         ; 1                               ;
-;     plain         ; 1                               ;
-; boundary_port     ; 4                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         1 data inputs ; 1                           ;
+; boundary_port         ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.50                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -256,7 +259,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat May 11 19:10:30 2024
+    Info: Processing started: Sat May 11 21:54:52 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_slave -c SPI_slave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -267,15 +270,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "MOSI" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 1
+    Warning (15610): No output dependent on input pin "SS" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 1
 Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Sat May 11 19:10:36 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Sat May 11 21:54:59 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
 
 

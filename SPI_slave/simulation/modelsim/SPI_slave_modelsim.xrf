@@ -5,6 +5,7 @@ design_name = SPI_slave
 instance = comp, \MISO~output , MISO~output, SPI_slave, 1
 instance = comp, \SCLK~input , SCLK~input, SPI_slave, 1
 instance = comp, \MOSI~input , MOSI~input, SPI_slave, 1
+instance = comp, \MISO~0 , MISO~0, SPI_slave, 1
 instance = comp, \MISO~reg0 , MISO~reg0, SPI_slave, 1
 instance = comp, \SS~input , SS~input, SPI_slave, 1
 instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, SPI_slave, 1

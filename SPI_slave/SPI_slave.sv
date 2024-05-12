@@ -1,8 +1,9 @@
 module SPI_slave(input reg SCLK, SS, MOSI,
-						output reg MISO, output reg Order);
-
+						output reg MISO);
+	
+	
 	always_ff @ (posedge SCLK) begin
-		MISO <= SS;
-	end	
+		MISO <= ~MOSI; 
+	end
 
 endmodule
