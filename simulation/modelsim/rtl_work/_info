@@ -8,55 +8,161 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/simulation/modelsim
-vfull_adder
+Z0 dC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/simulation/modelsim
+valu
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1715215748
+Z2 !s110 1715547756
 !i10b 1
-!s100 RZEbnJ?PI];aWgEniM7]M0
+!s100 nAaKclAMVe[NI15>>aFSP0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IoiT0K[Bgi:?;dC4I9d3lQ0
+IO2=Jh=B@4>OcUf3<XE3]]2
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1715215737
-8D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv
-FD:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv
-!i122 1
-L0 1 43
+w1715547457
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv
+!i122 3
+L0 1 45
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1715215748.000000
-!s107 D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos|D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv|
+Z6 !s108 1715547756.000000
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv|
 !i113 1
 Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos
+Z8 !s92 -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos
 Z9 tCvgOpt 0
-vfull_adder_tb
+valu_tb
 R1
-!s110 1715215749
+R2
 !i10b 1
-!s100 _9<:X6<XzcmYjB72_I;mX1
+!s100 EQZY?IZGFJB<S;c9_Rebb3
 R3
-IdKaA5fFe0JZIal<zVR[d@1
+Ik<EMfBLH=^K40F`aMG9Pg0
 R4
 S1
 R0
-w1715215481
-8D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder_tb.sv
-FD:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder_tb.sv
-!i122 2
-L0 1 39
+w1715547751
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv
+!i122 7
+L0 1 72
 R5
 r1
 !s85 0
 31
 R6
-!s107 D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos|D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder_tb.sv|
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv|
+!i113 1
+R7
+R8
+R9
+vANDoperation
+R1
+R2
+!i10b 1
+!s100 XQBQJ@3^gQZFMU8DfLnQc2
+R3
+I7@oMIVW8WW6Cz^0c0<3Aj3
+R4
+S1
+R0
+w1715547409
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv
+!i122 5
+Z10 L0 1 12
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv|
+!i113 1
+R7
+R8
+R9
+n@a@n@doperation
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 LKADT8;2]iZIRP@APnkF=0
+R3
+Ie`MIUg7P;K9?Chi3=edN71
+R4
+S1
+R0
+w1715543295
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv
+!i122 1
+L0 1 43
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv|
+!i113 1
+R7
+R8
+R9
+vORoperation
+R1
+R2
+!i10b 1
+!s100 NS:`Ha41T?j]4<T:Q4z0G1
+R3
+Id=7Go>HWjTVIi>NKQ>62Z3
+R4
+S1
+R0
+w1715547434
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv
+!i122 6
+R10
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv|
+!i113 1
+R7
+R8
+R9
+n@o@roperation
+vsubstractor
+R1
+R2
+!i10b 1
+!s100 Z<ZGn8X6?UMPaiV;oJ[;;0
+R3
+II@L63W6Fa=cLeQUK@lehi3
+R4
+S1
+R0
+w1715543294
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv
+!i122 2
+L0 1 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv|
 !i113 1
 R7
 R8
@@ -67,13 +173,13 @@ R2
 !i10b 1
 !s100 aSZl;zj89Y@0ZKJ4mKjA13
 R3
-IoD=Om<dckMSRKO3YoYAz92
+IdYdPiUNOhV_Ga4ab8[`C01
 R4
 S1
 R0
-w1709458607
-8D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/unit_adder.sv
-FD:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/unit_adder.sv
+w1715453418
+8C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv
+FC:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv
 !i122 0
 L0 1 8
 R5
@@ -81,8 +187,8 @@ r1
 !s85 0
 31
 R6
-!s107 D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/unit_adder.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos|D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/unit_adder.sv|
+!s107 C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos|C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv|
 !i113 1
 R7
 R8

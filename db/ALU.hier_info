@@ -1,0 +1,259 @@
+|alu_tb
+
+
+|alu_tb|alu:dut
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+a[0] => a[0].IN4
+a[1] => a[1].IN4
+a[2] => a[2].IN4
+a[3] => a[3].IN4
+b[0] => b[0].IN4
+b[1] => b[1].IN4
+b[2] => b[2].IN4
+b[3] => b[3].IN4
+result[0] <= res.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= res.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= res.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= res.DB_MAX_OUTPUT_PORT_TYPE
+Z <= <GND>
+C <= full_adder:add.port4
+V <= <GND>
+S <= substractor:sub.port3
+
+
+|alu_tb|alu:dut|full_adder:add
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|full_adder:add|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => inverted[0].IN1
+b[1] => inverted[1].IN1
+b[2] => inverted[2].IN1
+b[3] => inverted[3].IN1
+result[0] <= full_adder:sub.port3
+result[1] <= full_adder:sub.port3
+result[2] <= full_adder:sub.port3
+result[3] <= full_adder:sub.port3
+sign <= full_adder:sub.port4
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:add
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:sub
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|ANDoperation:andmodule
+a[0] => result.IN0
+a[1] => result.IN0
+a[2] => result.IN0
+a[3] => result.IN0
+b[0] => result.IN1
+b[1] => result.IN1
+b[2] => result.IN1
+b[3] => result.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu_tb|alu:dut|ORoperation:ormodule
+a[0] => result.IN0
+a[1] => result.IN0
+a[2] => result.IN0
+a[3] => result.IN0
+b[0] => result.IN1
+b[1] => result.IN1
+b[2] => result.IN1
+b[3] => result.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

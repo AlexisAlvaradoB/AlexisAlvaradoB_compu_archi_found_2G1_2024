@@ -1,11 +1,11 @@
 module full_adder(
-    input reg [3:0] a, b,
-	 input reg cin,
-    output reg [3:0] sum,
-    output reg cout
+    input logic [3:0] a, b,
+	 input logic cin,
+    output logic [3:0] sum,
+    output logic cout
 );
 
-reg [3:0] c;
+logic [3:0] c;
 assign c[0] = cin;
 
 unit_adder adder_Z(

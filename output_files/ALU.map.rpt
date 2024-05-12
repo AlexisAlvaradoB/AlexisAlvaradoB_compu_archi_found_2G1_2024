@@ -1,6 +1,6 @@
 Analysis & Elaboration report for ALU
-Wed May 08 18:49:03 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Sun May 12 14:59:12 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -9,9 +9,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |full_adder
-  5. Analysis & Elaboration Settings
-  6. Analysis & Elaboration Messages
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:sub"
+  6. Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:add"
+  7. Port Connectivity Checks: "alu:dut|full_adder:add"
+  8. Port Connectivity Checks: "alu:dut"
+  9. Analysis & Elaboration Messages
 
 
 
@@ -38,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed May 08 18:49:03 2024       ;
-; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Elaboration Status ; Successful - Sun May 12 14:59:12 2024       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; ALU                                         ;
-; Top-level Entity Name         ; full_adder                                  ;
+; Top-level Entity Name         ; alu_tb                                      ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -58,8 +61,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -69,23 +72,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |full_adder ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; N              ; 4     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +---------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; full_adder         ; ALU                ;
+; Top-level entity name                                                           ; alu_tb             ; ALU                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -166,28 +159,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:sub"                                                                                                                                              ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:add"                                                                                                                                               ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; b[3..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; b[0]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; cin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; cout    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut|full_adder:add"                                                                                                                                                              ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:dut"                                                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; result ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Z      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; C      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; V      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; S      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed May 08 18:48:57 2024
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun May 12 14:59:06 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file unit_adder.sv
-    Info (12023): Found entity 1: unit_adder File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/unit_adder.sv Line: 1
+    Info (12023): Found entity 1: unit_adder File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file full_adder.sv
-    Info (12023): Found entity 1: full_adder File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv Line: 1
+    Info (12023): Found entity 1: full_adder File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file full_adder_tb.sv
-    Info (12023): Found entity 1: full_adder_tb File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder_tb.sv Line: 1
-Info (12127): Elaborating entity "full_adder" for the top level hierarchy
-Info (12128): Elaborating entity "unit_adder" for hierarchy "unit_adder:adder_Z" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/full_adder.sv Line: 17
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4768 megabytes
-    Info: Processing ended: Wed May 08 18:49:03 2024
+    Info (12023): Found entity 1: full_adder_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file substractor.sv
+    Info (12023): Found entity 1: substractor File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file substractor_tb.sv
+    Info (12023): Found entity 1: substractor_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
+    Info (12023): Found entity 1: alu_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file andoperation.sv
+    Info (12023): Found entity 1: ANDoperation File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file oroperation.sv
+    Info (12023): Found entity 1: ORoperation File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv Line: 1
+Info (12127): Elaborating entity "alu_tb" for the top level hierarchy
+Warning (10175): Verilog HDL warning at alu_tb.sv(69): ignoring unsupported system task File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 69
+Info (12128): Elaborating entity "alu" for hierarchy "alu:dut" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 21
+Info (12128): Elaborating entity "full_adder" for hierarchy "alu:dut|full_adder:add" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 26
+Info (12128): Elaborating entity "unit_adder" for hierarchy "alu:dut|full_adder:add|unit_adder:adder_Z" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv Line: 17
+Info (12128): Elaborating entity "substractor" for hierarchy "alu:dut|substractor:sub" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 27
+Info (12128): Elaborating entity "ANDoperation" for hierarchy "alu:dut|ANDoperation:andmodule" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 28
+Info (12128): Elaborating entity "ORoperation" for hierarchy "alu:dut|ORoperation:ormodule" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 29
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Sun May 12 14:59:12 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
 
 

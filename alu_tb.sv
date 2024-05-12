@@ -1,0 +1,72 @@
+module alu_tb;
+
+    // Inputs
+    logic [1:0] select;
+    logic [3:0] a, b;
+    
+    // Outputs
+    logic [3:0] result;
+    logic Z, C, V, S;
+
+    // Instantiate the ALU module
+    alu dut (
+        .select(select),
+        .a(a),
+        .b(b),
+        .result(result),
+        .Z(Z),
+        .C(C),
+        .V(V),
+        .S(S)
+    );
+
+    // Stimulus
+    initial begin
+        // Test case 1: Addition
+        select = 2'b00;
+        a = 4'b1010;
+        b = 4'b0110;
+        #100;
+        
+        // Test case 2: Subtraction
+        select = 2'b01;
+        a = 4'b1010;
+        b = 4'b0110;
+        #100;
+
+        // Test case 3: Bitwise AND
+        select = 2'b10;
+        a = 4'b1010;
+        b = 4'b0110;
+        #100;
+
+        // Test case 4: Bitwise OR
+        select = 2'b11;
+        a = 4'b1010;
+        b = 4'b0110;
+        #100;
+
+        // Test case 5: Zero Result
+        select = 2'b00;
+        a = 4'b0000;
+        b = 4'b0000;
+        #100;
+        
+        // Test case 6: Negative Result
+        select = 2'b01;
+        a = 4'b0001;
+        b = 4'b0100;
+        #100;
+
+        // Test case 7: Overflow in Addition
+        select = 2'b00;
+        a = 4'b0111; // 7
+        b = 4'b0111; // 7
+        #100;
+
+        // Add more test cases if needed
+        
+        $finish;
+    end
+
+endmodule
