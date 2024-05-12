@@ -1,21 +1,31 @@
 #include <SPI.h>
 
-long x = millis();
+long time_ini = millis();
+bool data [10] = {0,0,0,0,0,0,0,0,0,0};
+int pos_counter = 0;
 
 void setup() {
-  Serial.begin(4600);
+  Serial.begin(9600);
   digitalWrite(SS, HIGH);
+  while(??? 10) yes 
+
+
+
   SPI.begin();
   SPI.setClockDivider(SPI_CLOCK_DIV16);
 }
 
 void loop() {
-  
-  while(millis()-x < 1000){
-    digitalWrite(SS, LOW);
-    digitalWrite(7, HIGH);
+ if(millis() - time_ini < 1000){
+  data[pos_counter] = 1;
+ }else{
+  data[pos_counter] = 0;
+  if(pos_counter >= 9){
+    pos_counter = 0;
+  }else{
+    pos_counter+=1;
   }
-  x = millis();
-
-
+  time_ini = millis();
+ }
+ fpga = SPI.transfer()
 }

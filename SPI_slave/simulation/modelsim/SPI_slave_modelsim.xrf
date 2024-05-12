@@ -1,12 +1,10 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/jorge/OneDrive/Documentos/Quartus/SPI_slave/SPI_slave.sv
-source_file = 1, C:/Users/jorge/OneDrive/Documentos/Quartus/SPI_slave/db/SPI_slave.cbx.xml
+source_file = 1, D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv
+source_file = 1, D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/db/SPI_slave.cbx.xml
 design_name = SPI_slave
 instance = comp, \MISO~output , MISO~output, SPI_slave, 1
-instance = comp, \CS~output , CS~output, SPI_slave, 1
-instance = comp, \clk~input , clk~input, SPI_slave, 1
-instance = comp, \SS~input , SS~input, SPI_slave, 1
-instance = comp, \CS~reg0feeder , CS~reg0feeder, SPI_slave, 1
-instance = comp, \CS~reg0 , CS~reg0, SPI_slave, 1
+instance = comp, \SCLK~input , SCLK~input, SPI_slave, 1
 instance = comp, \MOSI~input , MOSI~input, SPI_slave, 1
+instance = comp, \MISO~reg0 , MISO~reg0, SPI_slave, 1
+instance = comp, \SS~input , SS~input, SPI_slave, 1
 instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, SPI_slave, 1

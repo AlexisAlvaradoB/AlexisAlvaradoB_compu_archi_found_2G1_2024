@@ -4,7 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "CS",
+					"name" : "MISO",
 					"strict" : false
 				},
 				{
@@ -12,7 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "SCLK",
 					"strict" : false
 				}
 			]
