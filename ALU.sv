@@ -35,9 +35,9 @@ assign res[1] = (((~select[1] & ~select[0]) & sum[1]) | ((~select[1] & select[0]
 assign res[2] = (((~select[1] & ~select[0]) & sum[2]) | ((~select[1] & select[0]) & subs[2]) | ((select[1] & ~select[0]) & andop[2]) | ((select[1] & select[0]) & orop[2]));
 assign res[3] = (((~select[1] & ~select[0]) & sum[3]) | ((~select[1] & select[0]) & subs[3]) | ((select[1] & ~select[0]) & andop[3]) | ((select[1] & select[0]) & orop[3]));
 
-assign Z = Zt;
+assign Z = (res == 4'b0000);
 assign C = Ct;
-assign V = Vt;
+assign V = (((~select[1] & ~select[0]) & ((a[3] & b[3] & ~sum[3]) | (~a[3] & ~b[3] & sum[3]))) | ((~select[1] & select[0]) & ((a[3] & ~b[3] & ~subs[3]) | (~a[3] & b[3] & subs[3]))));
 assign S = St;
 
 assign result = res;
