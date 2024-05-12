@@ -1,4 +1,4 @@
-module full_adder #(parameter N = 4) (
+module full_adder(
     input reg [3:0] a, b,
 	 input reg cin,
     output reg [3:0] sum,
