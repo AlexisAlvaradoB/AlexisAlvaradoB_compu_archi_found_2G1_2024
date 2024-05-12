@@ -15,8 +15,8 @@ void setup() {
   SPI.setClockDivider(SPI_CLOCK_DIV16);
 }
 void loop() {
- for (int i = 0; i <= 9; i++){
-    if(i < 5){
+ for (int i = 9; i >= 0; i--){
+    if(i < 3){
       bit = 1;
     }else{
       bit = 0;
@@ -29,7 +29,7 @@ void loop() {
     }
  }
  Serial.print(" "); 
-  for(int i = 0; i <= 9; i++){
+  for(int i = 9; i >= 0; i--){
     Serial.print(data[i]);
   }
   Serial.print(" ");
@@ -38,5 +38,6 @@ void loop() {
  } else {
   Serial.println(" Failed sending data"); 
  }
- dataReceived = true;  
+ dataReceived = true; 
+ delay(1000); 
 }

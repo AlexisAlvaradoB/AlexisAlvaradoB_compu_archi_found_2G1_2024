@@ -8,6 +8,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "message[0]",
+					"strict" : false
+				},
+				{
+					"name" : "message[1]",
+					"strict" : false
+				},
+				{
 					"name" : "MOSI",
 					"strict" : false
 				},

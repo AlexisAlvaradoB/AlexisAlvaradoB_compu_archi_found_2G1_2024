@@ -2,20 +2,100 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1100mV 85C Model Setup 'SCLK'
+Slack : -6.071
+TNS   : -6.071
+
+Type  : Slow 1100mV 85C Model Setup 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.480
+TNS   : -0.480
+
+Type  : Slow 1100mV 85C Model Hold 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'SCLK'
+Slack : 2.326
+TNS   : 0.000
+
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SCLK'
 Slack : -0.394
-TNS   : -0.601
+TNS   : -1.219
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.394
+TNS   : -0.511
+
+Type  : Slow 1100mV 0C Model Setup 'SCLK'
+Slack : -5.622
+TNS   : -5.622
+
+Type  : Slow 1100mV 0C Model Setup 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.454
+TNS   : -0.454
+
+Type  : Slow 1100mV 0C Model Hold 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'SCLK'
+Slack : 2.048
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SCLK'
 Slack : -0.394
-TNS   : -0.606
+TNS   : -1.224
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.394
+TNS   : -0.514
+
+Type  : Fast 1100mV 85C Model Setup 'SCLK'
+Slack : -4.577
+TNS   : -4.577
+
+Type  : Fast 1100mV 85C Model Setup 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.047
+TNS   : -0.047
+
+Type  : Fast 1100mV 85C Model Hold 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'SCLK'
+Slack : 2.264
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SCLK'
-Slack : -0.259
-TNS   : -0.259
+Slack : -0.263
+TNS   : -0.523
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'SCLK'
+Slack : -3.774
+TNS   : -3.774
+
+Type  : Fast 1100mV 0C Model Setup 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : -0.006
+TNS   : -0.006
+
+Type  : Fast 1100mV 0C Model Hold 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'SCLK'
+Slack : 1.620
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SCLK'
-Slack : -0.261
-TNS   : -0.261
+Slack : -0.264
+TNS   : -0.526
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Counter:co|FlipFlopUnit:ff0|QAux'
+Slack : 0.144
+TNS   : 0.000
 
 ------------------------------------------------------------
