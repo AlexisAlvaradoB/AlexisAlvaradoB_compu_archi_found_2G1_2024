@@ -1,14 +1,20 @@
-module SPI_slave(input reg SCLK, SS, MOSI,
+module SPI_slave(input logic SCLK, SS, MOSI,
 						output reg MISO, output reg [9:0] message);
 	
-	reg [9:0] message_coll;
-	reg [3:0] contador; 
+	reg [9:0] message_aux;
+	reg [3:0] count; 
 	
-	Counter co(SCLK, message);
 	
-	always_ff @ (posedge SCLK) begin
+	logic rst;
+	logic rst_2;
 	
-		MISO <= ~MOSI; 
-	end
-
+	contador con(SCLK, rst, count);
+	
+	comparatorEqualThan comp (count, 10, rst_2);
+	
+	storeBit strB (SCLK, rst, MOSI, count, MISO, message);
+	
+	assign rst = SS || rst_2;
+	
+	
 endmodule

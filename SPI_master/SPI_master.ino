@@ -1,43 +1,44 @@
-#include <SPI.h>
-
 long time_ini = millis();
-bool bit;
+bool bit_out[10] = {0,0,0,0,0,1,1,0,1,1};
 bool dataReceived = true; 
 bool data [10] = {0,0,0,0,0,0,0,0,0,0}; 
-
+int i = 0;
 void setup() {
   Serial.begin(9600);
-  digitalWrite(SS, HIGH);/*
-  for(int i = 0; i <= 9; i++){
-    pinMode(i, INPUT);
-  }*/
-  SPI.begin();
-  SPI.setClockDivider(SPI_CLOCK_DIV16);
-}
-void loop() {
- for (int i = 9; i >= 0; i--){
-    if(i < 3){
-      bit = 1;
+  for(int i = 10; i <= 13; i++){
+    if(i == 12){
+      pinMode(i, INPUT);
     }else{
-      bit = 0;
+      pinMode(i, OUTPUT);
     }
-    Serial.print(bit);
-    SPI.transfer(bit);
-    data[i] = digitalRead(12);
-    if (data[i] == bit) {
-      dataReceived = false;
-    }
- }
- Serial.print(" "); 
-  for(int i = 9; i >= 0; i--){
-    Serial.print(data[i]);
   }
-  Serial.print(" ");
- if (dataReceived){
-  Serial.println("Data received"); 
- } else {
-  Serial.println(" Failed sending data"); 
+  pinMode(7, OUTPUT);
+  digitalWrite(10, HIGH);
+  delay(1);
+  digitalWrite(10, LOW);
+  digitalWrite(13, LOW);
+  
+}
+
+void loop() {
+ if(bit_out[i] == 1){
+  digitalWrite(7, HIGH);
+ }else{
+  digitalWrite(7, LOW);
  }
- dataReceived = true; 
- delay(1000); 
+
+ delay(10);
+ digitalWrite(13, HIGH);
+ delay(100);
+ digitalWrite(13, LOW);
+ 
+ data[i] = digitalRead(12);
+ Serial.print(data[i]);
+ delay(100);
+ if(i >= 9){
+  i = 0;
+  Serial.println("");
+ }else{
+  i++;
+ }
 }
