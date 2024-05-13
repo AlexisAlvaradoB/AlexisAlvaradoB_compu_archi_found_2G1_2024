@@ -1,12 +1,92 @@
-|alu
+|controller
+clk => clk.IN1
+rst => rst.IN1
+select[0] => select[0].IN1
+select[1] => select[1].IN1
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+Z << alu:comb_3.port4
+C << alu:comb_3.port5
+V << alu:comb_3.port6
+S << alu:comb_3.port7
+motor_pwm << pwm:pwm_inst.port3
+sevenSeg[0] << alu:comb_3.port8
+sevenSeg[1] << alu:comb_3.port8
+sevenSeg[2] << alu:comb_3.port8
+sevenSeg[3] << alu:comb_3.port8
+sevenSeg[4] << alu:comb_3.port8
+sevenSeg[5] << alu:comb_3.port8
+sevenSeg[6] << alu:comb_3.port8
+
+
+|controller|pwm:pwm_inst
+clk => count~0.CLK
+clk => count~1.CLK
+clk => count~2.CLK
+clk => count~3.CLK
+clk => count~4.CLK
+clk => count~5.CLK
+clk => count~6.CLK
+clk => count~7.CLK
+rst => count~0.ACLR
+rst => count~1.ACLR
+rst => count~2.ACLR
+rst => count~3.ACLR
+rst => count~4.ACLR
+rst => count~5.ACLR
+rst => count~6.ACLR
+rst => count~7.ACLR
+speed[0] => Add1.IN3
+speed[1] => Add1.IN2
+speed[2] => Add1.IN1
+speed[3] => Add1.IN0
+speed[4] => Add1.IN5
+motor_pwm <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3
 select[0] => res.IN0
 select[0] => res.IN0
 select[0] => res.IN0
 select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => V.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => V.IN0
 select[1] => res.IN1
 select[1] => res.IN1
 select[1] => res.IN1
 select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => V.IN1
+select[1] => V.IN1
 a[0] => a[0].IN4
 a[1] => a[1].IN4
 a[2] => a[2].IN4
@@ -15,24 +95,24 @@ b[0] => b[0].IN4
 b[1] => b[1].IN4
 b[2] => b[2].IN4
 b[3] => b[3].IN4
-result[0] << res[0].DB_MAX_OUTPUT_PORT_TYPE
-result[1] << res[1].DB_MAX_OUTPUT_PORT_TYPE
-result[2] << res[2].DB_MAX_OUTPUT_PORT_TYPE
-result[3] << res[3].DB_MAX_OUTPUT_PORT_TYPE
-Z << Equal0.DB_MAX_OUTPUT_PORT_TYPE
-C << full_adder:add.port4
-V << V.DB_MAX_OUTPUT_PORT_TYPE
-S << substractor:sub.port3
-sevenSeg[0] << decoder7seg:comb_94.port1
-sevenSeg[1] << decoder7seg:comb_94.port1
-sevenSeg[2] << decoder7seg:comb_94.port1
-sevenSeg[3] << decoder7seg:comb_94.port1
-sevenSeg[4] << decoder7seg:comb_94.port1
-sevenSeg[5] << decoder7seg:comb_94.port1
-sevenSeg[6] << decoder7seg:comb_94.port1
+result[0] <= result[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3].DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+C <= full_adder:add.port4
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+S <= substractor:sub.port3
+sevenSeg[0] <= decoder7seg:comb_94.port1
+sevenSeg[1] <= decoder7seg:comb_94.port1
+sevenSeg[2] <= decoder7seg:comb_94.port1
+sevenSeg[3] <= decoder7seg:comb_94.port1
+sevenSeg[4] <= decoder7seg:comb_94.port1
+sevenSeg[5] <= decoder7seg:comb_94.port1
+sevenSeg[6] <= decoder7seg:comb_94.port1
 
 
-|alu|full_adder:add
+|controller|alu:comb_3|full_adder:add
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -49,7 +129,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu|full_adder:add|unit_adder:adder_Z
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -60,7 +140,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|full_adder:add|unit_adder:adder_O
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -71,7 +151,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|full_adder:add|unit_adder:adder_Tw
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -82,7 +162,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|full_adder:add|unit_adder:adder_Th
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -93,7 +173,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub
+|controller|alu:comb_3|substractor:sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -109,7 +189,7 @@ result[3] <= full_adder:sub.port3
 sign <= full_adder:sub.port4
 
 
-|alu|substractor:sub|full_adder:add
+|controller|alu:comb_3|substractor:sub|full_adder:add
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -126,7 +206,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu|substractor:sub|full_adder:add|unit_adder:adder_Z
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -137,7 +217,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:add|unit_adder:adder_O
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -148,7 +228,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:add|unit_adder:adder_Tw
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -159,7 +239,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:add|unit_adder:adder_Th
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -170,7 +250,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:sub
+|controller|alu:comb_3|substractor:sub|full_adder:sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -187,7 +267,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu|substractor:sub|full_adder:sub|unit_adder:adder_Z
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -198,7 +278,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:sub|unit_adder:adder_O
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -209,7 +289,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:sub|unit_adder:adder_Tw
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -220,7 +300,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|substractor:sub|full_adder:sub|unit_adder:adder_Th
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -231,7 +311,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|ANDoperation:andmodule
+|controller|alu:comb_3|ANDoperation:andmodule
 a[0] => result.IN0
 a[1] => result.IN0
 a[2] => result.IN0
@@ -246,7 +326,7 @@ result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|ORoperation:ormodule
+|controller|alu:comb_3|ORoperation:ormodule
 a[0] => result.IN0
 a[1] => result.IN0
 a[2] => result.IN0
@@ -261,7 +341,7 @@ result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|decoder7seg:comb_94
+|controller|alu:comb_3|decoder7seg:comb_94
 number[0] => Equal0.IN0
 number[0] => Equal1.IN2
 number[0] => Equal2.IN3

@@ -43,6 +43,6 @@ assign S = St;
 
 assign result = res;
 
-decoder7seg (res, sevenSeg); 
+decoder7seg (result, sevenSeg); 
 
 endmodule

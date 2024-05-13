@@ -1,0 +1,15 @@
+module controller (
+	 input logic clk, rst, 
+	 input logic [6:0] speed, 
+	 input  logic [1:0] select,
+    input  logic [3:0] a,
+    input  logic [3:0] b,
+    output logic [3:0] result,
+	 output Z, C, V, S,
+	 output logic motor_pwm, 
+	 output logic [6:0] sevenSeg); 
+	 
+	 pwm pwm_inst (clk, rst, speed, motor_pwm); 
+	 
+	 
+endmodule 

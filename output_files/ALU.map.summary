@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun May 12 21:21:01 2024
+Analysis & Synthesis Status : Successful - Mon May 13 00:21:42 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : ALU
-Top-level Entity Name : alu
+Top-level Entity Name : controller
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 25
+Total registers : 8
+Total pins : 24
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
