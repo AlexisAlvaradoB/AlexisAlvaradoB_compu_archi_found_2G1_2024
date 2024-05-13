@@ -1,0 +1,10 @@
+module pwm_top (input logic rst, clk, 
+					 input logic [7:0] speed, 
+					 output logic motor_pwm); 
+					 
+	logic clk_divider;
+	slowDownClock #(11, 1700) slowDClk (clk, rst, clk_divider); 
+	
+	pwm pwm_inst (clk_divider, rst, speed, motor_pwm); 
+
+endmodule

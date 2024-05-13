@@ -1,0 +1,41 @@
+|pwm_top
+rst => rst.IN1
+clk => clk.IN1
+speed[0] => speed[0].IN1
+speed[1] => speed[1].IN1
+speed[2] => speed[2].IN1
+speed[3] => speed[3].IN1
+speed[4] => speed[4].IN1
+speed[5] => speed[5].IN1
+speed[6] => speed[6].IN1
+speed[7] => speed[7].IN1
+motor_pwm << pwm:pwm_inst.port3
+
+
+|pwm_top|pwm:pwm_inst
+clk => count~0.CLK
+clk => count~1.CLK
+clk => count~2.CLK
+clk => count~3.CLK
+clk => count~4.CLK
+clk => count~5.CLK
+clk => count~6.CLK
+clk => count~7.CLK
+rst => count~0.ACLR
+rst => count~1.ACLR
+rst => count~2.ACLR
+rst => count~3.ACLR
+rst => count~4.ACLR
+rst => count~5.ACLR
+rst => count~6.ACLR
+rst => count~7.ACLR
+speed[0] => LessThan0.IN8
+speed[1] => LessThan0.IN7
+speed[2] => LessThan0.IN6
+speed[3] => LessThan0.IN5
+speed[4] => LessThan0.IN4
+speed[5] => LessThan0.IN3
+speed[6] => LessThan0.IN2
+motor_pwm <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
