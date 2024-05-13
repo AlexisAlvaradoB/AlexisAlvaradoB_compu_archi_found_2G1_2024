@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun May 12 17:45:03 2024
-Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Sun May 12 23:55:14 2024
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : SPI_slave
 Top-level Entity Name : SPI_slave
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 25
-Total pins : 14
+Total registers : 2
+Total pins : 15
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

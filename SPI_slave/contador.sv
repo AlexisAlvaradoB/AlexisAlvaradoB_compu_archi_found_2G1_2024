@@ -3,7 +3,7 @@ module contador #(parameter n = 4) (input logic clk, reset,
 						
 	reg [n-1:0] count = 0;
 	
-	always @ (posedge clk) begin
+	always @ (negedge clk) begin
 		 if (reset)
 			  count<= 0;
 		 else

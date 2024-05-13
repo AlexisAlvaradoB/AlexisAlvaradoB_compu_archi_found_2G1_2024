@@ -1,6 +1,6 @@
 Analysis & Synthesis report for SPI_slave
-Sun May 12 17:45:03 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Sun May 12 23:55:14 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -14,20 +14,16 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: contador:con
- 10. Parameter Settings for User Entity Instance: comparatorEqualThan:comp
- 11. Port Connectivity Checks: "comparatorEqualThan:comp"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -44,27 +40,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 12 17:45:03 2024       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; SPI_slave                                   ;
-; Top-level Entity Name           ; SPI_slave                                   ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 25                                          ;
-; Total pins                      ; 14                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun May 12 23:55:14 2024          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; SPI_slave                                      ;
+; Top-level Entity Name           ; SPI_slave                                      ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 2                                              ;
+; Total pins                      ; 15                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -159,66 +155,61 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
-; contador.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/contador.sv            ;         ;
-; SPI_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv           ;         ;
-; comparatorEqualThan.sv           ; yes             ; User SystemVerilog HDL File  ; D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/comparatorEqualThan.sv ;         ;
-; storeBit.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/storeBit.sv            ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; SPI_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 13         ;
-;                                             ;            ;
-; Combinational ALUT usage for logic          ; 16         ;
-;     -- 7 input functions                    ; 0          ;
-;     -- 6 input functions                    ; 0          ;
-;     -- 5 input functions                    ; 3          ;
-;     -- 4 input functions                    ; 2          ;
-;     -- <=3 input functions                  ; 11         ;
-;                                             ;            ;
-; Dedicated logic registers                   ; 25         ;
-;                                             ;            ;
-; I/O pins                                    ; 14         ;
-;                                             ;            ;
-; Total DSP Blocks                            ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; SCLK~input ;
-; Maximum fan-out                             ; 25         ;
-; Total fan-out                               ; 128        ;
-; Average fan-out                             ; 1.86       ;
-+---------------------------------------------+------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 1             ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 2             ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 0             ;
+;     -- 5 input functions                    ; 0             ;
+;     -- 4 input functions                    ; 0             ;
+;     -- <=3 input functions                  ; 2             ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 2             ;
+;                                             ;               ;
+; I/O pins                                    ; 15            ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; confirm_state ;
+; Maximum fan-out                             ; 3             ;
+; Total fan-out                               ; 25            ;
+; Average fan-out                             ; 0.74          ;
++---------------------------------------------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; |SPI_slave                 ; 16 (0)              ; 25 (0)                    ; 0                 ; 0          ; 14   ; 0            ; |SPI_slave               ; SPI_slave   ; work         ;
-;    |contador:con|          ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SPI_slave|contador:con  ; contador    ; work         ;
-;    |storeBit:strB|         ; 12 (12)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SPI_slave|storeBit:strB ; storeBit    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |SPI_slave                 ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 15   ; 0            ; |SPI_slave          ; SPI_slave   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -227,47 +218,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
+; Total registers                              ; 2     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: contador:con ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; n              ; 4     ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: comparatorEqualThan:comp ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; n              ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "comparatorEqualThan:comp"                                                                                                                                                         ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; b    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; b[3] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; b[2] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; b[1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; b[0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -275,22 +233,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 25                          ;
-;     ENA               ; 10                          ;
-;     plain             ; 15                          ;
-; arriav_lcell_comb     ; 16                          ;
-;     arith             ; 10                          ;
+; arriav_ff             ; 2                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 3                           ;
+;     normal            ; 3                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 1                           ;
-;     normal            ; 6                           ;
 ;         1 data inputs ; 1                           ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 3                           ;
-; boundary_port         ; 14                          ;
+;         3 data inputs ; 1                           ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.90                        ;
-; Average LUT depth     ; 1.11                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -308,47 +261,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun May 12 17:44:56 2024
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun May 12 23:55:01 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_slave -c SPI_slave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file contador.sv
-    Info (12023): Found entity 1: contador File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/contador.sv Line: 1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
-    Info (12023): Found entity 1: SPI_slave File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file flipflopunit.sv
-    Info (12023): Found entity 1: FlipFlopUnit File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/FlipFlopUnit.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
-    Info (12023): Found entity 1: Counter File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/counter.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file comparatorequalthan.sv
-    Info (12023): Found entity 1: comparatorEqualThan File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/comparatorEqualThan.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file storebit.sv
-    Info (12023): Found entity 1: storeBit File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/storeBit.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at counter.sv(3): created implicit net for "rst" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/counter.sv Line: 3
+    Info (12023): Found entity 1: SPI_slave File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 1
 Info (12127): Elaborating entity "SPI_slave" for the top level hierarchy
-Info (12128): Elaborating entity "contador" for hierarchy "contador:con" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 11
-Info (12128): Elaborating entity "comparatorEqualThan" for hierarchy "comparatorEqualThan:comp" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 13
-Info (12128): Elaborating entity "storeBit" for hierarchy "storeBit:strB" File: D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 15
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10034): Output port "message[9..1]" at SPI_slave.sv(2) has no driver File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "message[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[2]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[3]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[4]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[5]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[6]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[7]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[8]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
+    Warning (13410): Pin "message[9]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/SPI_slave.sv Line: 2
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/output_files/SPI_slave.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 40 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 26 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Sun May 12 17:45:03 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in D:/Alexis/A_TEC/Semestre_5/Fundamentos/Proyecto_Grupal_Fundamentos/Proyecto_Fundamentos/SPI_slave/output_files/SPI_slave.map.smsg.
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Sun May 12 23:55:14 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:09
 
 

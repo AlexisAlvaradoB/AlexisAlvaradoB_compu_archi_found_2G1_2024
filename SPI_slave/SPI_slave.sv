@@ -1,20 +1,18 @@
-module SPI_slave(input logic SCLK, SS, MOSI,
+module SPI_slave(input logic SCLK, SS, MOSI, confirm,
 						output reg MISO, output reg [9:0] message);
 	
-	reg [9:0] message_aux;
-	reg [3:0] count; 
+	logic confirm_state = 0;
 	
+	always_ff @ (posedge SCLK) begin
+		MISO <= ~MOSI && SS && confirm_state;
+		
+	end
 	
-	logic rst;
-	logic rst_2;
+	always_ff @ (negedge confirm) begin
+		confirm_state = ~confirm_state;
+	end
 	
-	contador con(SCLK, rst, count);
-	
-	comparatorEqualThan comp (count, 10, rst_2);
-	
-	storeBit strB (SCLK, rst, MOSI, count, MISO, message);
-	
-	assign rst = SS || rst_2;
+	assign message[0] = confirm_state;
 	
 	
 endmodule

@@ -12,39 +12,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "message[1]",
+					"name" : "SS",
 					"strict" : false
 				},
 				{
-					"name" : "message[2]",
-					"strict" : false
-				},
-				{
-					"name" : "message[3]",
-					"strict" : false
-				},
-				{
-					"name" : "message[4]",
-					"strict" : false
-				},
-				{
-					"name" : "message[5]",
-					"strict" : false
-				},
-				{
-					"name" : "message[6]",
-					"strict" : false
-				},
-				{
-					"name" : "message[7]",
-					"strict" : false
-				},
-				{
-					"name" : "message[8]",
-					"strict" : false
-				},
-				{
-					"name" : "message[9]",
+					"name" : "MOSI",
 					"strict" : false
 				},
 				{
@@ -52,11 +24,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SS",
-					"strict" : false
-				},
-				{
-					"name" : "MOSI",
+					"name" : "confirm",
 					"strict" : false
 				}
 			]
