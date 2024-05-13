@@ -1,27 +1,32 @@
-Analysis & Elaboration report for ALU
-Sun May 12 14:59:12 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Analysis & Synthesis report for ALU
+Sun May 12 21:21:01 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:sub"
-  6. Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:add"
-  7. Port Connectivity Checks: "alu:dut|full_adder:add"
-  8. Port Connectivity Checks: "alu:dut"
-  9. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "substractor:sub|full_adder:sub"
+ 10. Port Connectivity Checks: "substractor:sub|full_adder:add"
+ 11. Port Connectivity Checks: "full_adder:add"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,47 +43,36 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun May 12 14:59:12 2024       ;
-; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                 ; ALU                                         ;
-; Top-level Entity Name         ; alu_tb                                      ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun May 12 21:21:01 2024          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; ALU                                            ;
+; Top-level Entity Name           ; alu                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 0                                              ;
+; Total pins                      ; 25                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; alu_tb             ; ALU                ;
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; alu                ; ALU                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -159,8 +153,102 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; unit_adder.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/unit_adder.sv   ;         ;
+; full_adder.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/full_adder.sv   ;         ;
+; substractor.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/substractor.sv  ;         ;
+; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv          ;         ;
+; ANDoperation.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/ANDoperation.sv ;         ;
+; ORoperation.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/ORoperation.sv  ;         ;
+; decoder7seg.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/decoder7seg.sv  ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimate of Logic utilization (ALMs needed) ; 14       ;
+;                                             ;          ;
+; Combinational ALUT usage for logic          ; 22       ;
+;     -- 7 input functions                    ; 1        ;
+;     -- 6 input functions                    ; 5        ;
+;     -- 5 input functions                    ; 8        ;
+;     -- 4 input functions                    ; 5        ;
+;     -- <=3 input functions                  ; 3        ;
+;                                             ;          ;
+; Dedicated logic registers                   ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 25       ;
+;                                             ;          ;
+; Total DSP Blocks                            ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; res[0]~0 ;
+; Maximum fan-out                             ; 9        ;
+; Total fan-out                               ; 145      ;
+; Average fan-out                             ; 2.01     ;
++---------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
+; |alu                           ; 22 (8)              ; 0 (0)                     ; 0                 ; 0          ; 25   ; 0            ; |alu                                                    ; alu         ; work         ;
+;    |decoder7seg:comb_94|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|decoder7seg:comb_94                                ; decoder7seg ; work         ;
+;    |full_adder:add|            ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:add                                     ; full_adder  ; work         ;
+;       |unit_adder:adder_O|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:add|unit_adder:adder_O                  ; unit_adder  ; work         ;
+;       |unit_adder:adder_Th|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:add|unit_adder:adder_Th                 ; unit_adder  ; work         ;
+;       |unit_adder:adder_Tw|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|full_adder:add|unit_adder:adder_Tw                 ; unit_adder  ; work         ;
+;    |substractor:sub|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub                                    ; substractor ; work         ;
+;       |full_adder:add|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub|full_adder:add                     ; full_adder  ; work         ;
+;          |unit_adder:adder_Th| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub|full_adder:add|unit_adder:adder_Th ; unit_adder  ; work         ;
+;       |full_adder:sub|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub|full_adder:sub                     ; full_adder  ; work         ;
+;          |unit_adder:adder_Th| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub|full_adder:sub|unit_adder:adder_Th ; unit_adder  ; work         ;
+;          |unit_adder:adder_Tw| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|substractor:sub|full_adder:sub|unit_adder:adder_Tw ; unit_adder  ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:sub"                                                                                                                                              ;
+; Port Connectivity Checks: "substractor:sub|full_adder:sub"                                                                                                                                                      ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,7 +258,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:dut|substractor:sub|full_adder:add"                                                                                                                                               ;
+; Port Connectivity Checks: "substractor:sub|full_adder:add"                                                                                                                                                       ;
 +---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
 +---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -183,7 +271,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:dut|full_adder:add"                                                                                                                                                              ;
+; Port Connectivity Checks: "full_adder:add"                                                                                                                                                                      ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -192,60 +280,89 @@ https://fpgasoftware.intel.com/eula.
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:dut"                                                                              ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; result ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; Z      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; C      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; V      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; S      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 28                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 27                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 5                           ;
+; boundary_port         ; 25                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 4.16                        ;
++-----------------------+-----------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun May 12 14:59:06 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU --analysis_and_elaboration
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun May 12 21:20:25 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file unit_adder.sv
-    Info (12023): Found entity 1: unit_adder File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv Line: 1
+    Info (12023): Found entity 1: unit_adder File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/unit_adder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file full_adder.sv
-    Info (12023): Found entity 1: full_adder File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv Line: 1
+    Info (12023): Found entity 1: full_adder File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/full_adder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file full_adder_tb.sv
-    Info (12023): Found entity 1: full_adder_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder_tb.sv Line: 1
+    Info (12023): Found entity 1: full_adder_tb File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/full_adder_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file substractor.sv
-    Info (12023): Found entity 1: substractor File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv Line: 1
+    Info (12023): Found entity 1: substractor File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/substractor.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file substractor_tb.sv
-    Info (12023): Found entity 1: substractor_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor_tb.sv Line: 1
+    Info (12023): Found entity 1: substractor_tb File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/substractor_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 1
+    Info (12023): Found entity 1: alu File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
-    Info (12023): Found entity 1: alu_tb File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 1
+    Info (12023): Found entity 1: alu_tb File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file andoperation.sv
-    Info (12023): Found entity 1: ANDoperation File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv Line: 1
+    Info (12023): Found entity 1: ANDoperation File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/ANDoperation.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file oroperation.sv
-    Info (12023): Found entity 1: ORoperation File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv Line: 1
-Info (12127): Elaborating entity "alu_tb" for the top level hierarchy
-Warning (10175): Verilog HDL warning at alu_tb.sv(69): ignoring unsupported system task File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 69
-Info (12128): Elaborating entity "alu" for hierarchy "alu:dut" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv Line: 21
-Info (12128): Elaborating entity "full_adder" for hierarchy "alu:dut|full_adder:add" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 26
-Info (12128): Elaborating entity "unit_adder" for hierarchy "alu:dut|full_adder:add|unit_adder:adder_Z" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv Line: 17
-Info (12128): Elaborating entity "substractor" for hierarchy "alu:dut|substractor:sub" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 27
-Info (12128): Elaborating entity "ANDoperation" for hierarchy "alu:dut|ANDoperation:andmodule" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 28
-Info (12128): Elaborating entity "ORoperation" for hierarchy "alu:dut|ORoperation:ormodule" File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 29
+    Info (12023): Found entity 1: ORoperation File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/ORoperation.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder7seg.sv
+    Info (12023): Found entity 1: decoder7seg File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/decoder7seg.sv Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at alu.sv(46): instance has no name File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 46
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at alu.sv(20): object "Zt" assigned a value but never read File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 20
+Warning (10036): Verilog HDL or VHDL warning at alu.sv(22): object "Vt" assigned a value but never read File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 22
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:add" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 27
+Info (12128): Elaborating entity "unit_adder" for hierarchy "full_adder:add|unit_adder:adder_Z" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/full_adder.sv Line: 17
+Info (12128): Elaborating entity "substractor" for hierarchy "substractor:sub" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 28
+Info (12128): Elaborating entity "ANDoperation" for hierarchy "ANDoperation:andmodule" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 29
+Info (12128): Elaborating entity "ORoperation" for hierarchy "ORoperation:ormodule" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 30
+Info (12128): Elaborating entity "decoder7seg" for hierarchy "decoder7seg:comb_94" File: C:/Users/isaac/Documents/TEC/TDD4/Proyecto_Fundamentos/alu.sv Line: 46
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4762 megabytes
-    Info: Processing ended: Sun May 12 14:59:12 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:03
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 22 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Sun May 12 21:21:01 2024
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:45
 
 

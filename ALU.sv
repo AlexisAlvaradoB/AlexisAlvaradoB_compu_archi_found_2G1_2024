@@ -3,7 +3,8 @@ module alu(
     input  logic [3:0] a,
     input  logic [3:0] b,
     output logic [3:0] result,
-	 output Z, C, V, S
+	 output Z, C, V, S,
+	 output logic [6:0] sevenSeg
 );
 
 
@@ -41,5 +42,7 @@ assign V = (((~select[1] & ~select[0]) & ((a[3] & b[3] & ~sum[3]) | (~a[3] & ~b[
 assign S = St;
 
 assign result = res;
+
+decoder7seg (res, sevenSeg); 
 
 endmodule

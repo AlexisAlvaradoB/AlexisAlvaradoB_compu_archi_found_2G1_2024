@@ -1,7 +1,4 @@
-|alu_tb
-
-
-|alu_tb|alu:dut
+|alu
 select[0] => res.IN0
 select[0] => res.IN0
 select[0] => res.IN0
@@ -18,17 +15,24 @@ b[0] => b[0].IN4
 b[1] => b[1].IN4
 b[2] => b[2].IN4
 b[3] => b[3].IN4
-result[0] <= res.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= res.DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= res.DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= res.DB_MAX_OUTPUT_PORT_TYPE
-Z <= <GND>
-C <= full_adder:add.port4
-V <= <GND>
-S <= substractor:sub.port3
+result[0] << res[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] << res[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] << res[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] << res[3].DB_MAX_OUTPUT_PORT_TYPE
+Z << Equal0.DB_MAX_OUTPUT_PORT_TYPE
+C << full_adder:add.port4
+V << V.DB_MAX_OUTPUT_PORT_TYPE
+S << substractor:sub.port3
+sevenSeg[0] << decoder7seg:comb_94.port1
+sevenSeg[1] << decoder7seg:comb_94.port1
+sevenSeg[2] << decoder7seg:comb_94.port1
+sevenSeg[3] << decoder7seg:comb_94.port1
+sevenSeg[4] << decoder7seg:comb_94.port1
+sevenSeg[5] << decoder7seg:comb_94.port1
+sevenSeg[6] << decoder7seg:comb_94.port1
 
 
-|alu_tb|alu:dut|full_adder:add
+|alu|full_adder:add
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -45,7 +49,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Z
+|alu|full_adder:add|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -56,7 +60,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|full_adder:add|unit_adder:adder_O
+|alu|full_adder:add|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -67,7 +71,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Tw
+|alu|full_adder:add|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -78,7 +82,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|full_adder:add|unit_adder:adder_Th
+|alu|full_adder:add|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -89,7 +93,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub
+|alu|substractor:sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -105,7 +109,7 @@ result[3] <= full_adder:sub.port3
 sign <= full_adder:sub.port4
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:add
+|alu|substractor:sub|full_adder:add
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -122,7 +126,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Z
+|alu|substractor:sub|full_adder:add|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -133,7 +137,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_O
+|alu|substractor:sub|full_adder:add|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -144,7 +148,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Tw
+|alu|substractor:sub|full_adder:add|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -155,7 +159,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:add|unit_adder:adder_Th
+|alu|substractor:sub|full_adder:add|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -166,7 +170,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:sub
+|alu|substractor:sub|full_adder:sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -183,7 +187,7 @@ sum[3] <= unit_adder:adder_Th.port3
 cout <= unit_adder:adder_Th.port4
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Z
+|alu|substractor:sub|full_adder:sub|unit_adder:adder_Z
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -194,7 +198,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_O
+|alu|substractor:sub|full_adder:sub|unit_adder:adder_O
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -205,7 +209,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Tw
+|alu|substractor:sub|full_adder:sub|unit_adder:adder_Tw
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -216,7 +220,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|substractor:sub|full_adder:sub|unit_adder:adder_Th
+|alu|substractor:sub|full_adder:sub|unit_adder:adder_Th
 a => sum.IN0
 a => cout.IN0
 b => sum.IN1
@@ -227,7 +231,7 @@ sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|ANDoperation:andmodule
+|alu|ANDoperation:andmodule
 a[0] => result.IN0
 a[1] => result.IN0
 a[2] => result.IN0
@@ -242,7 +246,7 @@ result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu_tb|alu:dut|ORoperation:ormodule
+|alu|ORoperation:ormodule
 a[0] => result.IN0
 a[1] => result.IN0
 a[2] => result.IN0
@@ -255,5 +259,79 @@ result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|decoder7seg:comb_94
+number[0] => Equal0.IN0
+number[0] => Equal1.IN2
+number[0] => Equal2.IN3
+number[0] => Equal3.IN3
+number[0] => Equal4.IN3
+number[0] => Equal5.IN1
+number[0] => Equal6.IN3
+number[0] => Equal7.IN1
+number[0] => Equal8.IN3
+number[0] => Equal9.IN3
+number[0] => Equal10.IN1
+number[0] => Equal11.IN3
+number[0] => Equal12.IN2
+number[0] => Equal13.IN2
+number[0] => Equal14.IN3
+number[0] => Equal15.IN3
+number[1] => Equal0.IN3
+number[1] => Equal1.IN1
+number[1] => Equal2.IN2
+number[1] => Equal3.IN2
+number[1] => Equal4.IN0
+number[1] => Equal5.IN0
+number[1] => Equal6.IN2
+number[1] => Equal7.IN3
+number[1] => Equal8.IN1
+number[1] => Equal9.IN2
+number[1] => Equal10.IN3
+number[1] => Equal11.IN1
+number[1] => Equal12.IN1
+number[1] => Equal13.IN3
+number[1] => Equal14.IN2
+number[1] => Equal15.IN2
+number[2] => Equal0.IN2
+number[2] => Equal1.IN0
+number[2] => Equal2.IN1
+number[2] => Equal3.IN1
+number[2] => Equal4.IN2
+number[2] => Equal5.IN3
+number[2] => Equal6.IN0
+number[2] => Equal7.IN0
+number[2] => Equal8.IN0
+number[2] => Equal9.IN1
+number[2] => Equal10.IN2
+number[2] => Equal11.IN2
+number[2] => Equal12.IN3
+number[2] => Equal13.IN1
+number[2] => Equal14.IN1
+number[2] => Equal15.IN1
+number[3] => Equal0.IN1
+number[3] => Equal1.IN3
+number[3] => Equal2.IN0
+number[3] => Equal3.IN0
+number[3] => Equal4.IN1
+number[3] => Equal5.IN2
+number[3] => Equal6.IN1
+number[3] => Equal7.IN2
+number[3] => Equal8.IN2
+number[3] => Equal9.IN0
+number[3] => Equal10.IN0
+number[3] => Equal11.IN0
+number[3] => Equal12.IN0
+number[3] => Equal13.IN0
+number[3] => Equal14.IN0
+number[3] => Equal15.IN0
+segments[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
