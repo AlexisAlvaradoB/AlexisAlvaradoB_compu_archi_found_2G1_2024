@@ -20,6 +20,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "enabledSPI",
+					"strict" : false
+				},
+				{
+					"name" : "MISO",
+					"strict" : false
+				},
+				{
 					"name" : "motor_pwm",
 					"strict" : false
 				},
@@ -89,6 +97,18 @@
 				},
 				{
 					"name" : "b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SS",
+					"strict" : false
+				},
+				{
+					"name" : "MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "confirm",
 					"strict" : false
 				},
 				{

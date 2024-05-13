@@ -3,8 +3,21 @@ module SPI_slave(input logic SCLK, SS, MOSI, confirm,
 	
 	logic confirm_state = 0;
 	
-	always_ff @ (posedge SCLK) begin
-		MISO <= ~MOSI && SS && confirm_state;
+	reg [3:0] contador;
+	
+	always_ff @ (posedge SCLK or negedge SS) begin
+		
+		if(~SS) begin
+			contador = 4'b0000;
+		end else begin
+			MISO <= ~MOSI && SS && confirm_state;
+			if(contador == 4'b1001) begin
+				contador = 4'b0000;
+			end else begin
+				contador = contador + 1;
+			end
+		end
+		
 		
 	end
 	
@@ -12,7 +25,7 @@ module SPI_slave(input logic SCLK, SS, MOSI, confirm,
 		confirm_state = ~confirm_state;
 	end
 	
-	assign message[0] = confirm_state;
+	assign message = contador;
 	
 	
 endmodule
