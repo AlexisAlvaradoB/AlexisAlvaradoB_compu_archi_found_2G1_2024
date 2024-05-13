@@ -1,0 +1,20 @@
+module storeBit(input reg clk, rst, MOSI, output reg MISO, 
+	output reg [9:0] message);
+
+	always@ (posedge SCLK) begin
+		
+		if(rst) begin
+			
+			message_aux <= 0;
+			
+		end else begin
+		
+			message_aux <= (message_aux << 1) + MOSI;
+		
+		end
+		
+	end
+
+	assign message = message_aux;
+	
+endmodule 

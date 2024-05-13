@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "MISO",
+					"strict" : false
+				},
+				{
+					"name" : "message[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SS",
+					"strict" : false
+				},
+				{
+					"name" : "MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "confirm",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

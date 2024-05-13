@@ -1,0 +1,8 @@
+module Counter(input logic clk, output logic countOut);
+
+	logic JSet = 1'b1;
+	logic KSet = 1'b1;
+	
+	
+
+endmodule 
