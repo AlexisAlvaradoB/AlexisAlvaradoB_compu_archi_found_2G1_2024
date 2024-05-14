@@ -1,8 +1,18 @@
 |SPI_slave
-clk => CS~reg0.CLK
-SS => CS~reg0.DATAIN
-MOSI => ~NO_FANOUT~
-MISO <= <GND>
-CS <= CS~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SCLK => MISO~reg0.CLK
+SS => MISO.IN0
+MOSI => MISO.IN1
+confirm => confirm_state.CLK
+MISO <= MISO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+message[0] <= confirm_state.DB_MAX_OUTPUT_PORT_TYPE
+message[1] <= <GND>
+message[2] <= <GND>
+message[3] <= <GND>
+message[4] <= <GND>
+message[5] <= <GND>
+message[6] <= <GND>
+message[7] <= <GND>
+message[8] <= <GND>
+message[9] <= <GND>
 
 

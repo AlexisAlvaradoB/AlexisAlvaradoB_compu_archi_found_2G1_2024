@@ -1,0 +1,432 @@
+|controller
+clk => clk.IN1
+rst => rst.IN1
+SCLK => SCLK.IN1
+SS => SS.IN1
+MOSI => MOSI.IN1
+confirm => confirm.IN1
+select[0] => select[0].IN1
+select[1] => select[1].IN1
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+Z << alu:comb_3.port4
+C << alu:comb_3.port5
+V << alu:comb_3.port6
+S << alu:comb_3.port7
+enabledSPI << SPI_slave:spi.port5
+MISO << SPI_slave:spi.port4
+motor_pwm << pwm:pwm_inst.port3
+sevenSeg[0] << alu:comb_3.port8
+sevenSeg[1] << alu:comb_3.port8
+sevenSeg[2] << alu:comb_3.port8
+sevenSeg[3] << alu:comb_3.port8
+sevenSeg[4] << alu:comb_3.port8
+sevenSeg[5] << alu:comb_3.port8
+sevenSeg[6] << alu:comb_3.port8
+
+
+|controller|pwm:pwm_inst
+clk => count~0.CLK
+clk => count~1.CLK
+clk => count~2.CLK
+clk => count~3.CLK
+clk => count~4.CLK
+clk => count~5.CLK
+clk => count~6.CLK
+clk => count~7.CLK
+rst => count~0.ACLR
+rst => count~1.ACLR
+rst => count~2.ACLR
+rst => count~3.ACLR
+rst => count~4.ACLR
+rst => count~5.ACLR
+rst => count~6.ACLR
+rst => count~7.ACLR
+speed[0] => Add1.IN3
+speed[1] => Add1.IN2
+speed[2] => Add1.IN1
+speed[3] => Add1.IN0
+speed[4] => Add1.IN5
+motor_pwm <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => V.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => res.IN0
+select[0] => V.IN0
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => res.IN1
+select[1] => V.IN1
+select[1] => V.IN1
+a[0] => a[0].IN4
+a[1] => a[1].IN4
+a[2] => a[2].IN4
+a[3] => a[3].IN4
+b[0] => b[0].IN4
+b[1] => b[1].IN4
+b[2] => b[2].IN4
+b[3] => b[3].IN4
+result[0] <= result[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3].DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+C <= full_adder:add.port4
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+S <= substractor:sub.port3
+sevenSeg[0] <= decoder7seg:comb_94.port1
+sevenSeg[1] <= decoder7seg:comb_94.port1
+sevenSeg[2] <= decoder7seg:comb_94.port1
+sevenSeg[3] <= decoder7seg:comb_94.port1
+sevenSeg[4] <= decoder7seg:comb_94.port1
+sevenSeg[5] <= decoder7seg:comb_94.port1
+sevenSeg[6] <= decoder7seg:comb_94.port1
+
+
+|controller|alu:comb_3|full_adder:add
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|full_adder:add|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => inverted[0].IN1
+b[1] => inverted[1].IN1
+b[2] => inverted[2].IN1
+b[3] => inverted[3].IN1
+result[0] <= full_adder:sub.port3
+result[1] <= full_adder:sub.port3
+result[2] <= full_adder:sub.port3
+result[3] <= full_adder:sub.port3
+sign <= full_adder:sub.port4
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:add
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:add|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:sub
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => c[0].IN1
+sum[0] <= unit_adder:adder_Z.port3
+sum[1] <= unit_adder:adder_O.port3
+sum[2] <= unit_adder:adder_Tw.port3
+sum[3] <= unit_adder:adder_Th.port3
+cout <= unit_adder:adder_Th.port4
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Z
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_O
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Tw
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|substractor:sub|full_adder:sub|unit_adder:adder_Th
+a => sum.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+cin => sum.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|ANDoperation:andmodule
+a[0] => result.IN0
+a[1] => result.IN0
+a[2] => result.IN0
+a[3] => result.IN0
+b[0] => result.IN1
+b[1] => result.IN1
+b[2] => result.IN1
+b[3] => result.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|ORoperation:ormodule
+a[0] => result.IN0
+a[1] => result.IN0
+a[2] => result.IN0
+a[3] => result.IN0
+b[0] => result.IN1
+b[1] => result.IN1
+b[2] => result.IN1
+b[3] => result.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|alu:comb_3|decoder7seg:comb_94
+number[0] => Equal0.IN0
+number[0] => Equal1.IN2
+number[0] => Equal2.IN3
+number[0] => Equal3.IN3
+number[0] => Equal4.IN3
+number[0] => Equal5.IN1
+number[0] => Equal6.IN3
+number[0] => Equal7.IN1
+number[0] => Equal8.IN3
+number[0] => Equal9.IN3
+number[0] => Equal10.IN1
+number[0] => Equal11.IN3
+number[0] => Equal12.IN2
+number[0] => Equal13.IN2
+number[0] => Equal14.IN3
+number[0] => Equal15.IN3
+number[1] => Equal0.IN3
+number[1] => Equal1.IN1
+number[1] => Equal2.IN2
+number[1] => Equal3.IN2
+number[1] => Equal4.IN0
+number[1] => Equal5.IN0
+number[1] => Equal6.IN2
+number[1] => Equal7.IN3
+number[1] => Equal8.IN1
+number[1] => Equal9.IN2
+number[1] => Equal10.IN3
+number[1] => Equal11.IN1
+number[1] => Equal12.IN1
+number[1] => Equal13.IN3
+number[1] => Equal14.IN2
+number[1] => Equal15.IN2
+number[2] => Equal0.IN2
+number[2] => Equal1.IN0
+number[2] => Equal2.IN1
+number[2] => Equal3.IN1
+number[2] => Equal4.IN2
+number[2] => Equal5.IN3
+number[2] => Equal6.IN0
+number[2] => Equal7.IN0
+number[2] => Equal8.IN0
+number[2] => Equal9.IN1
+number[2] => Equal10.IN2
+number[2] => Equal11.IN2
+number[2] => Equal12.IN3
+number[2] => Equal13.IN1
+number[2] => Equal14.IN1
+number[2] => Equal15.IN1
+number[3] => Equal0.IN1
+number[3] => Equal1.IN3
+number[3] => Equal2.IN0
+number[3] => Equal3.IN0
+number[3] => Equal4.IN1
+number[3] => Equal5.IN2
+number[3] => Equal6.IN1
+number[3] => Equal7.IN2
+number[3] => Equal8.IN2
+number[3] => Equal9.IN0
+number[3] => Equal10.IN0
+number[3] => Equal11.IN0
+number[3] => Equal12.IN0
+number[3] => Equal13.IN0
+number[3] => Equal14.IN0
+number[3] => Equal15.IN0
+segments[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|SPI_slave:spi
+SCLK => ~NO_FANOUT~
+SS => MISO.IN0
+MOSI => MISO.IN1
+confirm => confirm_state.CLK
+MISO <= MISO.DB_MAX_OUTPUT_PORT_TYPE
+enabledSPI <= confirm_state.DB_MAX_OUTPUT_PORT_TYPE
+
+

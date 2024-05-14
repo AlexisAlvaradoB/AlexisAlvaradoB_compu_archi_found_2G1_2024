@@ -4,7 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "CS",
+					"name" : "MISO",
+					"strict" : false
+				},
+				{
+					"name" : "message[0]",
 					"strict" : false
 				},
 				{
@@ -12,7 +16,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "confirm",
 					"strict" : false
 				}
 			]

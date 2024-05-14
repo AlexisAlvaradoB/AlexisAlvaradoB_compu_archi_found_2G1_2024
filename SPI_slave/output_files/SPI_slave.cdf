@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/jorge/OneDrive/Documentos/Quartus/SPI_slave/output_files/") File("SPI_slave.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/jorge/OneDrive/Documentos/GitHub/H/Proyecto_Fundamentos/SPI_slave/output_files/") File("SPI_slave.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

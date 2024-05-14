@@ -1,0 +1,127 @@
+# Reading pref.tcl
+# do ALU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/unit_adder.sv 
+# -- Compiling module unit_adder
+# 
+# Top level modules:
+# 	unit_adder
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv 
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv 
+# -- Compiling module substractor
+# 
+# Top level modules:
+# 	substractor
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ANDoperation.sv 
+# -- Compiling module ANDoperation
+# 
+# Top level modules:
+# 	ANDoperation
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/ORoperation.sv 
+# -- Compiling module ORoperation
+# 
+# Top level modules:
+# 	ORoperation
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos {C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:02:36 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos" C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 15:02:36 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  alu_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" alu_tb 
+# Start time: 15:02:36 on May 12,2024
+# Loading sv_std.std
+# Loading work.alu_tb
+# Loading work.alu
+# Loading work.full_adder
+# Loading work.unit_adder
+# Loading work.substractor
+# Loading work.ANDoperation
+# Loading work.ORoperation
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'cin'. The port definition is at: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/dut/add File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu.sv Line: 26
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/dut/sub/add File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv Line: 17
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'cin'. The port definition is at: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/dut/sub/add File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv Line: 17
+# ** Warning: (vsim-3722) C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv(17): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'cin'. The port definition is at: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/full_adder.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/dut/sub/sub File: C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/substractor.sv Line: 22
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv(69)
+#    Time: 700 ps  Iteration: 0  Instance: /alu_tb
+# 1
+# Break in Module alu_tb at C:/Users/andre/Desktop/TEC/Fundamentos/Proyecto2/Proyecto_Fundamentos/alu_tb.sv line 69
+# End time: 15:05:51 on May 12,2024, Elapsed time: 0:03:15
+# Errors: 0, Warnings: 5
